@@ -1,97 +1,146 @@
 <!doctype html>
-<html lang="ko">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  </head>
-
-  <body style="background-color:snow;">
-    
-    <div class="p-3 mb-2 bg-dark text-white" style="text-align: center; padding: 3%; font-style:italic">
-      <a href="index.html" style="text-decoration:none; color:white;" ><h1>" Be Lazy Team "</h1></a>
-    </div> 
-
-    <!-- 동영상 추가
-    <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-    </div> -->
-
-    <div class="container" style="margin-top: 10%; margin-bottom: 10%;">
-      <div class="row">
-      
-        <div class="col-sm">
-          <div class="shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-            <img class="card-img-top" src="/images/park.png">
-            <div class="card-body">
-              <h5 class="card-title">박 창 근</h5>
-              <p class="text-black-50">안녕하세요 박창근입니다!</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">소개1</li>
-              <li class="list-group-item">소개2</li>
-            </ul>
-            <div class="card-body">
-              <a href="park.html" class="card-link">Indroduction</a>
-              <a href="login.html" class="card-link">login</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm">
-          <div class="shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-            <img class="card-img-top" src="/images/kwon.png" >
-            <div class="card-body">
-              <h5 class="card-title">권 영 인</h5>
-              <p class="text-black-50">안녕하세요 권영인입니다!</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">gds9210@gmail.com</li>
-              <li class="list-group-item">Tel.010-2210-2756</li>
-            </ul>
-            <div class="card-body">
-              <a href="youngin.html" class="card-link">Indroduction</a>
-              <a href="login.html" class="card-link">login</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm">
-          <div class="shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-            <img class="card-img-top" src="/images/lee.png" >
-            <div class="card-body">
-              <h5 class="card-title">이 형 원</h5>
-              <p class="text-black-50">안녕하세요 이형원입니다!</p>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">소개1</li>
-              <li class="list-group-item">소개2</li>
-            </ul>
-            <div class="card-body">
-              <a href="lee.html" class="card-link">Indroduction</a>
-              <a href="login.html" class="card-link">login</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
-
-  <footer>
-    <div class="p-3 mb-2 bg-dark text-white" style="text-align: center; font-style:italic;">
-      Copyright 2021. BeLazy<br>
-      All rights reserved
-    </div> 
-  </footer>
+<html lang="ko" style="background-color: #5376c4;">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type = "text/css">
+	body{
+		margin: 0;
+		padding: 0;
+		font-family: sans-serif;
+		background-size: cover;
+		bckground-repeat: no-repeat;	
+	}
+	
+	body:before{
+		content: '';
+		position : absolute;
+		top : 0;
+		left: -25%;
+		width: 50%;
+		height: 100%;
+		background : #03a9f4;
+		opacity: 0.8;		
+	}
+	
+	.form{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		width: 400px;
+		padding: 40px;
+        /*min-height: 400px;*/
+		background: rgba(0,0,0,.8);
+		padding: 50px;
+		box-sizing: border-box;
+		box-shadow: 0 15px 25px rgba(0,0,0,.5);
+		border-radius: 10px;
+	}
+	
+	.form h2{
+		margin: 0 0 30px;
+		padding: 0;
+		color: #fff;
+		text-align: center;
+	}
+	
+	.form .input-box{
+		position: relative;
+	}
+	
+	.form .input-box input{
+		width: 100%;
+		padding: 10px 0;
+		color: #fff;
+		font-size: 16px;
+		margin-bottom: 30px;
+		border: none;
+		outline: none;
+		background: transparent;
+		border-bottom: 1px solid #fff;
+		box-sizing: border-box;
+		font-weight: bold;
+	}
+	
+	.form .input-box label{
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding: 10px 0;
+		color: #fff;
+		font-size: 16px;
+		pointer-events: none;
+		transition: .5s;
+	} 
+	
+	.form .input-box input:focus ~ label,
+	.form .input-box input:valid ~ label{
+		top: -18px;
+		left: 0;
+		color: #03a9f4;
+		font-size: 12px;	
+	}
+		
+	.form .input-box .fa{
+		position: absolute;
+		top: 8px;
+		left: -13px;
+		font-size: 18xp;
+		color: #777;
+	}
+	.form .input-box input[type="submit"]{
+		border: none;
+		cursor: pointer;
+		background: #03a9f4;
+		color: #fff;
+		font-weight: bold;
+		transition: 0.5s; 
+	}
+	
+	.form .input-box input[type="submit"]:hover{
+		background: #ff4987;
+	}
+	
+	.a{
+		text-decoration: none;
+		color: #ff4987;
+		margin-top: 20px;
+		font-weight: bold;
+		display: inline-block;
+		transition: 0.5s;
+	}
+</style>	
+</head>
+<body>
+	<div class = "form">
+		<form action="login_chk.php" method="post" >
+			<h2>LogIn</h2>						
+			
+			<!-- Username -->
+			<div class="input-box">	
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<input type="text" id="userid" name="userid" required/>
+				<label>Username</label>
+			</div>
+				
+			<!-- Password -->
+			<div class="input-box">
+				<i class="fa fa-unlock-alt" aria-hidden="true"></i>
+				<input type="password" id="userpw" name="userpw" required/>
+				<label>Password</label>
+			</div> 
+				
+			<!-- Button -->
+			<div class="input-box">
+				<input type="submit" value="Login">
+			</div>
+		</form>
+		<form action="join.html" method="post">	
+			<div class="input-box">
+				<input type="submit" name="joinbtn" value="Join"/>
+			</div>
+		</form>
+	</div>	
+</body>
 </html>

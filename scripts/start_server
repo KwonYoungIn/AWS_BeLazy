@@ -1,2 +1,31 @@
 #!/bin/bash
 service httpd start
+systemctl enable httpd
+systemctl start tomcat
+systemctl enable tomcat
+systemctl start mysqld
+systemctl enable mysqld
+echo "LoadModule proxy_module modules/mod_proxy.so" >> .//etc/httpd/conf/httpd.conf
+echo "LoadModule proxy_connect_module modules/mod_proxy_connect.so" >> .//etc/httpd/conf/httpd.conf
+echo "LoadModule proxy_http_module modules/mod_proxy_http.so" >> .//etc/httpd/conf/httpd.conf
+echo "<VirtualHost *:80>" >> .//etc/httpd/conf/httpd.conf
+echo "        ProxyRequests On" >> .//etc/httpd/conf/httpd.conf
+echo "        ProxyPreserveHost On" >> /etc/httpd/conf/httpd.conf
+echo "        <Proxy *>" >> /etc/httpd/conf/httpd.conf
+echo "                Order deny,allow" >> /etc/httpd/conf/httpd.conf
+echo "                Allow from all" >> /etc/httpd/conf/httpd.conf
+echo "                SetEnv force-proxy-request-1.0.1" >> /etc/httpd/conf/httpd.conf
+echo "                SetEnv proxy-nokeepalive 1" >> /etc/httpd/conf/httpd.conf
+echo "                SetEnv proxy-initial-not-pooled 1" >> /etc/httpd/conf/httpd.conf
+echo "        </Proxy>" >> /etc/httpd/conf/httpd.conf
+# was dns 주소 입력
+echo "        ProxyPass '/servlet/' 'http://internal-was-alb-537255444.ap-northeast-2.elb.amazonaws.com:8080/' retry=0 " >> /etc/httpd/conf/httpd.conf
+echo "        ProxyPassMatch '^/.*\.(jsp|do)$' 'http://internal-was-alb-537255444.ap-northeast-2.elb.amazonaws.com:8080/' " >> /etc/httpd/conf/httpd.conf
+echo "        Timeout 2400" >> /etc/httpd/conf/httpd.conf
+echo "        ProxyTimeout 2400" >> /etc/httpd/conf/httpd.conf
+echo "        ProxyBadHeader Ignore" >> /etc/httpd/conf/httpd.conf
+echo "</VirtualHost>" >> /etc/httpd/conf/httpd.conf
+echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.282.b08-1.amzn2.0.1.x86_64/jre/bin/java" >> /etc/profile
+echo "export PATH=$PATH:$JAVA_HOME/bin" >> /etc/profile
+echo "export CLASSPATH=$JAVA_HOME/jre/lib:$JAVA_HOME/lib/tools.jar" >> /etc/profile
+source /etc/profile

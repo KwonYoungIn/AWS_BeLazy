@@ -1,2 +1,12 @@
 #!/bin/bash
-yum install -y httpd
+sudo yum install -y httpd
+sudo yum install libjpeg* libpng* freetype* gd-* gcc gcc-c++ gdbm-devel libtermcap-devel -y 
+sudo amazon-linux-extras install -y php7.4 # php 7.4 레포지토리 설지
+sudo amazon-linux-extras enable php7.4 # php 7.4 패키지 활성
+sudo yum install -y php-cli php-common php-gd php-mbstring php-mysqlnd php-pdo php-fpm php-xml php-opcache php-zip php-bcmath # php 모듈 설치
+sudo wget http://repo.mysql.com/mysql80-community-release-el7-3.noarch.rpm # mysql release 설치
+sudo rpm -ivh mysql80-community-release-el7-3.noarch.rpm # mysql repository 설치
+sudo yum install -y mysql-community-server.x86_64 # mysql 설치
+sudo yum install -y java-1.8.0-openjdk
+sudo yum install -y java-1.8.0-openjdk-devel.x86_64
+sudo yum install -y tomcat tomcat-admin-webapps.noarch tomcat-webapps.noarch tomcat-docs-webapp.noarch
